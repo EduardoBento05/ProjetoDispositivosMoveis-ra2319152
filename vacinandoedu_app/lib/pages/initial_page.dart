@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vacinandoedu_app/pages/configuration_page.dart';
 import 'package:vacinandoedu_app/pages/niveis_page.dart';
+import '../widgets/bottom_navigationbar_widget.dart';
 import '../widgets/logo.dart';
 import '../widgets/start_button.dart';
 import '../constants.dart';
@@ -62,6 +63,26 @@ class InitialPage extends StatelessWidget {
             const SizedBox(height: 40),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationWidget(
+        buttons: [
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfigurationPage(),
+                )),
+            icon: Icon(Icons.settings),
+          ),
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.audiotrack),
+          ),
+        ],
       ),
     );
   }

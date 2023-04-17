@@ -3,9 +3,12 @@ import 'package:vacinandoedu_app/widgets/next_button.dart';
 import 'package:vacinandoedu_app/widgets/options_card.dart';
 
 import '../models/questions_model.dart';
+import '../pages/configuration_page.dart';
+import '../pages/initial_page.dart';
 import './questions_widget.dart';
 import '../constants.dart';
 import './result_box.dart';
+import 'bottom_navigationbar_widget.dart';
 
 class Nivel1Fase2Widget extends StatefulWidget {
   const Nivel1Fase2Widget({super.key});
@@ -209,6 +212,31 @@ class _Nivel1Fase2WidgetState extends State<Nivel1Fase2Widget> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      bottomNavigationBar: BottomNavigationWidget(
+        buttons: [
+          IconButton(
+            onPressed: () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InitialPage(),
+                ),
+                (route) => false),
+            icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfigurationPage(),
+                )),
+            icon: Icon(Icons.settings),
+          ),
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.audiotrack),
+          ),
+        ],
+      ),
     );
   }
 }

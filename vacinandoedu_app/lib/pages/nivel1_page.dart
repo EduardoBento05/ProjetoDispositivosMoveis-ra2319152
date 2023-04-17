@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vacinandoedu_app/constants.dart';
+import 'package:vacinandoedu_app/pages/initial_page.dart';
 import 'package:vacinandoedu_app/widgets/nivel1_fase1_widget.dart';
 import 'package:vacinandoedu_app/widgets/nivel1_fase2_widget.dart';
 import 'package:vacinandoedu_app/widgets/nivel1_fase3_widget.dart';
 import 'package:vacinandoedu_app/widgets/start_button.dart';
+import '../widgets/bottom_navigationbar_widget.dart';
+import 'configuration_page.dart';
 
 class Nivel1Page extends StatefulWidget {
   const Nivel1Page({super.key});
@@ -64,6 +67,31 @@ class _Nivel1PageState extends State<Nivel1Page> {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationWidget(
+        buttons: [
+          IconButton(
+            onPressed: () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InitialPage(),
+                ),
+                (route) => false),
+            icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfigurationPage(),
+                )),
+            icon: Icon(Icons.settings),
+          ),
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.audiotrack),
+          ),
+        ],
       ),
     );
   }

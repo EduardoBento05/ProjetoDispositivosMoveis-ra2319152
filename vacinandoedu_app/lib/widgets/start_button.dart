@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacinandoedu_app/constants.dart';
 
 class StartButton extends StatelessWidget {
   final String title;
@@ -18,8 +19,7 @@ class StartButton extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.all<Color>(Colors.yellowAccent),
+          backgroundColor: MaterialStateProperty.all<Color>(neutral),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),

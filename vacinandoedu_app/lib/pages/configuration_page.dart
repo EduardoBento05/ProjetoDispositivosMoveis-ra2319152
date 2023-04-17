@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vacinandoedu_app/constants.dart%20';
+import 'package:vacinandoedu_app/pages/initial_page.dart';
+
+import '../widgets/bottom_navigationbar_widget.dart';
 
 class ConfigurationPage extends StatefulWidget {
   const ConfigurationPage({super.key});
@@ -70,6 +73,27 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationWidget(
+        buttons: [
+          IconButton(
+            onPressed: () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InitialPage(),
+                ),
+                (route) => false),
+            icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.settings),
+          ),
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.audiotrack),
+          ),
+        ],
       ),
     );
   }

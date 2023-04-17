@@ -3,7 +3,10 @@ import 'package:vacinandoedu_app/widgets/nivel2_fase1_widget.dart';
 import 'package:vacinandoedu_app/widgets/nivel2_fase2_widget.dart';
 import 'package:vacinandoedu_app/widgets/nivel2_fase3_widget.dart';
 import '../constants.dart ';
+import '../widgets/bottom_navigationbar_widget.dart';
 import '../widgets/start_button.dart';
+import 'configuration_page.dart';
+import 'initial_page.dart';
 
 class Nivel2Page extends StatelessWidget {
   const Nivel2Page({super.key});
@@ -59,6 +62,31 @@ class Nivel2Page extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationWidget(
+        buttons: [
+          IconButton(
+            onPressed: () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InitialPage(),
+                ),
+                (route) => false),
+            icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfigurationPage(),
+                )),
+            icon: Icon(Icons.settings),
+          ),
+          IconButton(
+            onPressed: () => null,
+            icon: Icon(Icons.audiotrack),
+          ),
+        ],
       ),
     );
   }

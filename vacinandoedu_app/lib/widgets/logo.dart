@@ -19,12 +19,12 @@ class Logo extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 40),
           child: RichText(
             text: TextSpan(
-                text: 'Memory and',
+                text: 'VacinandoEdu',
                 style:
                     DefaultTextStyle.of(context).style.copyWith(fontSize: 30),
                 children: const [
                   TextSpan(
-                    text: ' Quiz Game',
+                    text: ' Quiz',
                     style: TextStyle(color: Colors.amber),
                   )
                 ]),
